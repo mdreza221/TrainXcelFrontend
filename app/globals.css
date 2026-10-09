@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Light theme (default) ── */
+:root {
+  --bg-page: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-2: #f1f5f9;
+  --bg-sidebar: #ffffff;
+  --border: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --accent: #2563eb;
+}
+
+/* ── Dark theme ── */
+.dark {
+  --bg-page: #0a0a0a;
+  --bg-surface: #121212;
+  --bg-surface-2: #1e1e1e;
+  --bg-sidebar: #121212;
+  --border: #27272a;
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --accent: #3b82f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 17px; /* Scales up all relative Tailwind rem font classes globally */
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
